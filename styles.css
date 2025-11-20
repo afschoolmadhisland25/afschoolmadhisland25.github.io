@@ -332,6 +332,49 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Motto Section */
+.motto {
+  padding: 80px 0;
+  background: #e0f2f7; /* A light, calming background color */
+  text-align: center;
+}
+
+.motto .section-title {
+  color: #1e3a8a;
+  margin-bottom: 30px;
+}
+
+.motto-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0d47a1; /* A darker blue for prominence */
+  margin-bottom: 10px;
+  font-family: 'Arial Unicode MS', 'Devanagari MT', sans-serif; /* Ensure Hindi font support */
+}
+
+.motto-translation {
+  font-size: 1.2rem;
+  color: #3f51b5; /* A slightly lighter blue */
+  font-style: italic;
+}
+
+.mission-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.mission-text {
+  font-size: 1.1rem;
+  color: #3f51b5;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Notice Board */
 .notice-board {
   padding: 100px 0;
@@ -576,13 +619,18 @@ body {
 }
 
 .gallery-item:hover {
-  transform: scale(1.05);
+  /* No transform here */
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
 
 .gallery-overlay {
@@ -666,13 +714,18 @@ body {
 }
 
 .achievement-item:hover {
-  transform: scale(1.05);
+  /* No transform here */
 }
 
 .achievement-item img {
   width: 100%;
   height: auto;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.achievement-item:hover img {
+  transform: scale(1.05);
 }
 
 .achievement-overlay {
