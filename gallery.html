@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Air Force School Madh Island</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <style>
+      .gallery-page-header {
+        background: linear-gradient(135deg, #1e3a8a 0%, #60a5fa 100%);
+        color: white;
+        padding: 120px 0 60px;
+        text-align: center;
+        margin-top: 110px;
+      }
+
+      .gallery-page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .gallery-page-header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        background: white;
+        color: #1e3a8a;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: #f8fafc;
+        transform: translateX(-5px);
+      }
+
+      .gallery-page-container {
+        padding: 60px 0;
+        background: #f8fafc;
+      }
+
+      .gallery-page-grid {
+        column-count: 3;
+        column-gap: 30px;
+      }
+
+      .gallery-page-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 30px;
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .gallery-page-item:hover {
+        transform: scale(1.02);
+      }
+
+      .gallery-page-item img,
+      .gallery-page-item video {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        border-radius: 15px;
+      }
+
+      .gallery-page-item video {
+        background: #000;
+        cursor: pointer;
+      }
+
+      .gallery-page-item video:hover {
+        opacity: 0.9;
+      }
+
+      .empty-gallery {
+        text-align: center;
+        padding: 80px 20px;
+        color: #64748b;
+        grid-column: 1 / -1;
+      }
+
+      .empty-gallery i {
+        font-size: 4rem;
+        color: #cbd5e1;
+        margin-bottom: 20px;
+      }
+
+      .empty-gallery h3 {
+        font-size: 1.5rem;
+        color: #1e3a8a;
+        margin-bottom: 10px;
+      }
+
+      .loading {
+        text-align: center;
+        padding: 80px 20px;
+        color: #64748b;
+      }
+
+      .loading i {
+        font-size: 3rem;
+        color: #1e3a8a;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .gallery-page-grid {
+          column-count: 2;
+        }
+
+        .gallery-page-header h1 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .gallery-page-grid {
+          column-count: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img
+            src="afsschool.png"
+            width="100px"
+            height="100px"
+            alt="Air Force School School Logo"
+          />
+          <div class="nav-title">
+            <span class="school-main">Air Force School</span>
+            <span class="school-sub">Madh Island</span>
+          </div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Gallery Page Header -->
+    <div class="gallery-page-header">
+      <div class="container">
+        <a href="index.html#gallery" class="back-button">
+          <i class="fas fa-arrow-left"></i>
+          Back to Gallery
+        </a>
+        <h1 id="gallery-title">Gallery</h1>
+        <p id="gallery-description">Loading gallery...</p>
+      </div>
+    </div>
+
+    <!-- Gallery Page Content -->
+    <section class="gallery-page-container">
+      <div class="container">
+        <div id="gallery-container" class="gallery-page-grid">
+          <div class="loading">
+            <i class="fas fa-spinner"></i>
+            <p>Loading images...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#gallery">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Information</h3>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Air Force Station, Madh
+                Island, Harbadevi, Malad West, Mumbai, Maharashtra 400061
+              </p>
+              <p>
+                <i class="fas fa-phone"></i> Tele 022-28803381 & 022-28800332
+                AFNET 3926-6856
+              </p>
+              <p>
+                <i class="fas fa-envelope"></i> afschoolmadhisland2022@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Air Force School Madh Island. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="folders.js"></script>
+    <script>
+      // Get folder parameter from URL
+      function getUrlParameter(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        const regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+        const results = regex.exec(location.search);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      // Load gallery based on folder parameter
+      function loadGallery() {
+        const folderKey = getUrlParameter("folder");
+        const container = document.getElementById("gallery-container");
+        const titleElement = document.getElementById("gallery-title");
+        const descriptionElement = document.getElementById(
+          "gallery-description"
+        );
+
+        if (!folderKey) {
+          container.innerHTML = `
+            <div class="empty-gallery">
+              <i class="fas fa-exclamation-triangle"></i>
+              <h3>No Folder Selected</h3>
+              <p>Please select a folder from the main gallery page.</p>
+            </div>
+          `;
+          titleElement.textContent = "Gallery";
+          descriptionElement.textContent = "No folder selected";
+          return;
+        }
+        try {
+          const folder = foldersData[folderKey];
+
+          if (!folder) {
+            container.innerHTML = `
+                <div class="empty-gallery">
+                  <i class="fas fa-exclamation-triangle"></i>
+                  <h3>Folder Not Found</h3>
+                  <p>The requested folder does not exist.</p>
+                </div>
+              `;
+            titleElement.textContent = "Gallery";
+            descriptionElement.textContent = "Folder not found";
+            return;
+          }
+
+          // Update title and description
+          titleElement.textContent = folder.name;
+          descriptionElement.textContent = folder.description || "";
+
+          // Clear container
+          container.innerHTML = "";
+
+          // Load images and videos
+          if (folder.images && folder.images.length > 0) {
+            let loadedCount = 0;
+            let totalItems = folder.images.length;
+
+            folder.images.forEach((fileName, index) => {
+              const filePath = folder.directory + fileName;
+              const fileExtension = fileName.split(".").pop().toLowerCase();
+              const isVideo =
+                fileExtension === "mp4" ||
+                fileExtension === "webm" ||
+                fileExtension === "ogg";
+
+              if (isVideo) {
+                // Handle video files
+                const galleryItem = document.createElement("div");
+                galleryItem.className = "gallery-page-item";
+
+                const video = document.createElement("video");
+                video.src = filePath;
+                video.controls = true;
+                video.preload = "metadata";
+                video.playsInline = true;
+                video.style.width = "100%";
+                video.style.height = "auto";
+                video.style.display = "block";
+                video.setAttribute(
+                  "alt",
+                  `${folder.name} - Video ${index + 1}`
+                );
+
+                // Create the gallery item immediately and append video
+                galleryItem.appendChild(video);
+                container.appendChild(galleryItem);
+                loadedCount++;
+
+                video.onloadedmetadata = function () {
+                  // Video metadata loaded successfully
+                };
+
+                video.onerror = function () {
+                  console.warn(`Failed to load video: ${filePath}`);
+                  // Video failed to load, but item is already added
+                };
+
+                // Check if all items are processed
+                if (loadedCount === totalItems) {
+                  // All items processed
+                }
+              } else {
+                // Handle image files
+                const img = new Image();
+                const imagePath = filePath;
+
+                img.onload = function () {
+                  const galleryItem = document.createElement("div");
+                  galleryItem.className = "gallery-page-item";
+                  galleryItem.innerHTML = `<img src="${imagePath}" alt="${
+                    folder.name
+                  } - Image ${index + 1}" />`;
+                  container.appendChild(galleryItem);
+                  loadedCount++;
+
+                  // If all items loaded, remove loading state
+                  if (loadedCount === totalItems) {
+                    // All items loaded
+                  }
+                };
+
+                img.onerror = function () {
+                  console.warn(`Failed to load image: ${imagePath}`);
+                  loadedCount++;
+                  if (
+                    loadedCount === totalItems &&
+                    container.children.length === 0
+                  ) {
+                    showEmptyMessage(container);
+                  }
+                };
+
+                img.src = imagePath;
+              }
+            });
+
+            // Show empty message if no images load after a delay
+            setTimeout(() => {
+              if (container.children.length === 0) {
+                showEmptyMessage(container);
+              }
+            }, 3000);
+          } else {
+            showEmptyMessage(container);
+          }
+        } catch (error) {
+          console.error("Error loading gallery:", error);
+          container.innerHTML = `
+              <div class="empty-gallery">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h3>Error Loading Gallery</h3>
+                <p>Unable to load gallery data. Please try again later.</p>
+              </div>
+            `;
+          titleElement.textContent = "Gallery";
+          descriptionElement.textContent = "Error loading gallery";
+        }
+      }
+
+      function showEmptyMessage(container) {
+        container.innerHTML = `
+          <div class="empty-gallery">
+            <i class="fas fa-images"></i>
+            <h3>Gallery Coming Soon</h3>
+            <p>Images will be displayed here once they are added to the folder.</p>
+          </div>
+        `;
+      }
+
+      // Load gallery when page loads
+      document.addEventListener("DOMContentLoaded", loadGallery);
+    </script>
+  </body>
+</html>
