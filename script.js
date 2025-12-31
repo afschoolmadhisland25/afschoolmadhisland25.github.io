@@ -1,3 +1,122 @@
+// Notice Board Data
+
+// Render Notice Board
+function renderNoticeBoard() {
+  const noticeContainer = document.querySelector(".notice-container");
+  if (!noticeContainer) return;
+
+  noticeContainer.innerHTML = "";
+
+  noticeBoardData.forEach((notice) => {
+    const noticeItem = document.createElement("div");
+    noticeItem.className = "notice-item fade-in";
+
+    noticeItem.innerHTML = `
+      <div class="notice-date">
+        <span class="day">${notice.day}</span>
+        <span class="month">${notice.month}</span>
+      </div>
+      <div class="notice-content">
+        <h3>${notice.title}</h3>
+        <p>${notice.description}</p>
+        <span class="notice-tag">${notice.tag}</span>
+      </div>
+    `;
+
+    noticeContainer.appendChild(noticeItem);
+  });
+
+  // Re-initialize scroll animations for dynamically added notice items
+  initScrollAnimations();
+}
+
+// Render Fees Structure
+function renderFeesStructure() {
+  const feesContent = document.querySelector(".fees-content");
+  if (!feesContent || !feesStructureData) return;
+
+  // Render fees info section
+  const feesInfo = feesContent.querySelector(".fees-info");
+  if (feesInfo) {
+    feesInfo.innerHTML = `
+      <h3>Academic Year ${feesStructureData.academicYear}</h3>
+      <p>${feesStructureData.description}</p>
+      <a
+        href="${feesStructureData.downloadLink}"
+        class="download-btn"
+        download="fee_structure_final.jpeg"
+      >
+        <i class="fas fa-download"></i>
+        Download Complete Fee Structure
+      </a>
+    `;
+  }
+
+  // Get all fees-table divs
+  const feesTables = feesContent.querySelectorAll(".fees-table");
+
+  // Render fresh admission table (first table)
+  if (feesTables[0] && feesStructureData.freshAdmission) {
+    const data = feesStructureData.freshAdmission;
+    let tableHTML = `<h3>${data.title}</h3><table><thead><tr>`;
+    data.headers.forEach((header) => {
+      tableHTML += `<th>${header}</th>`;
+    });
+    tableHTML += `</tr></thead><tbody>`;
+
+    data.rows.forEach((row) => {
+      tableHTML += `<tr>
+        <td>${row.category}</td>
+        <td>${row.admissionFee}</td>
+        <td>${row.cautionMoney}</td>
+        <td>${row.developmentFee}</td>
+        <td>${row.insuranceFee}</td>
+        <td>${row.diaryHealthCardFee}</td>
+        <td>${row.activityFee}</td>
+        <td>${row.totalOneTimeAnnual}</td>
+        <td>${row.eLearningFee}</td>
+        <td>${row.practicalLearningFee}</td>
+        <td>${row.tuitionFee}</td>
+        <td>${row.monthlyTotal}</td>
+        <td>${row.totalWithThreeMonths}</td>
+      </tr>`;
+    });
+
+    tableHTML += `</tbody></table>`;
+    feesTables[0].innerHTML = tableHTML;
+  }
+
+  // Render existing students table (second table)
+  if (feesTables[1] && feesStructureData.existingStudents) {
+    const data = feesStructureData.existingStudents;
+    let tableHTML = `<h3>${data.title}</h3><table><thead><tr>`;
+    data.headers.forEach((header) => {
+      tableHTML += `<th>${header}</th>`;
+    });
+    tableHTML += `</tr></thead><tbody>`;
+
+    data.rows.forEach((row) => {
+      tableHTML += `<tr>
+        <td>${row.category}</td>
+        <td>${row.developmentFee}</td>
+        <td>${row.insuranceFee}</td>
+        <td>${row.diaryHealthCardFee}</td>
+        <td>${row.activityFee}</td>
+        <td>${row.totalAnnualCharge}</td>
+        <td>${row.eLearningFee}</td>
+        <td>${row.practicalLearningFee}</td>
+        <td>${row.tuitionFee}</td>
+        <td>${row.monthlyTotal}</td>
+        <td>${row.totalWithThreeMonths}</td>
+      </tr>`;
+    });
+
+    tableHTML += `</tbody></table>`;
+    feesTables[1].innerHTML = tableHTML;
+    feesTables[1].style.marginTop = "40px";
+  }
+}
+
 // DOM Content Loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize all functionality
@@ -8,6 +127,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initScrollAnimations();
   initModal();
   initNavbarScroll();
+  initGalleryFolders();
+  renderNoticeBoard();
+  renderFeesStructure();
 });
 
 // Carousel Functionality
@@ -441,3 +563,35 @@ window.addEventListener("load", function () {
   const loadTime = performance.now();
   console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
 });
+
+// Gallery Folders - Load dynamically from JSON
+function initGalleryFolders() {
+  const foldersContainer = document.getElementById("gallery-folders");
+  if (!foldersContainer) return;
+
+  let data = foldersData;
+  console.log(data);
+  foldersContainer.innerHTML = "";
+  Object.keys(data).forEach((folderKey) => {
+    const folder = data[folderKey];
+    const folderItem = document.createElement("div");
+    folderItem.className = "folder-item";
+    folderItem.onclick = () => {
+      window.open(
+        `gallery.html?folder=${encodeURIComponent(folderKey)}`,
+        "_blank"
+      );
+    };
+    folderItem.innerHTML = `
+      <div class="folder-icon">
+        <i class="fas fa-folder"></i>
+      </div>
+      <div class="folder-name">${folder.name}</div>
+      <div class="folder-overlay">
+        <i class="fas fa-external-link-alt"></i>
+        <span>View Gallery</span>
+      </div>
+    `;
+    foldersContainer.appendChild(folderItem);
+  });
+}
