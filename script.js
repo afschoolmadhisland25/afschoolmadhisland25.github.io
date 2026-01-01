@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initialize all functionality
   initCarousel();
   initMobileNav();
+  initFacilitiesToggle();
   initGalleryFilters();
   initSmoothScrolling();
   initScrollAnimations();
@@ -592,5 +593,64 @@ function initGalleryFolders() {
       </div>
     `;
     foldersContainer.appendChild(folderItem);
+  });
+}
+
+// Facilities Expand/Collapse Functionality
+function initFacilitiesToggle() {
+  const facilitiesGrid = document.querySelector(".facilities-grid");
+  const expandBtn = document.getElementById("facilitiesExpandBtn");
+
+  if (!facilitiesGrid || !expandBtn) return;
+
+  const facilityItems = facilitiesGrid.querySelectorAll(".facility-item");
+
+  // Hide button if there are 3 or fewer items
+  if (facilityItems.length <= 3) {
+    expandBtn.style.display = "none";
+    return;
+  }
+
+  let isExpanded = false;
+
+  // Hide all items beyond the first 3 by default
+  facilityItems.forEach((item, index) => {
+    if (index >= 3) {
+      item.classList.add("hidden");
+    }
+  });
+
+  // Toggle functionality
+  expandBtn.addEventListener("click", () => {
+    isExpanded = !isExpanded;
+
+    facilityItems.forEach((item, index) => {
+      if (index >= 3) {
+        if (isExpanded) {
+          item.classList.remove("hidden");
+        } else {
+          item.classList.add("hidden");
+        }
+      }
+    });
+
+    // Update button text and icon
+    if (isExpanded) {
+      expandBtn.innerHTML =
+        'Show Less Facilities <i class="fas fa-chevron-down"></i>';
+      expandBtn.classList.add("expanded");
+    } else {
+      expandBtn.innerHTML =
+        'Show More Facilities <i class="fas fa-chevron-down"></i>';
+      expandBtn.classList.remove("expanded");
+    }
+
+    // Smooth scroll to facilities section if collapsing
+    if (!isExpanded) {
+      document.getElementById("facilities").scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   });
 }

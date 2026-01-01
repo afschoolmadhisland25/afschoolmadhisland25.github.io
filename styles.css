@@ -441,6 +441,48 @@ body {
   margin: 0;
 }
 
+.facility-item.hidden {
+  display: none;
+}
+
+.facilities-toggle {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.expand-btn {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+  font-family: "Poppins", sans-serif;
+}
+
+.expand-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
+  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
+}
+
+.expand-btn:active {
+  transform: translateY(0);
+}
+
+.expand-btn i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.expand-btn.expanded i {
+  transform: rotate(180deg);
+}
+
 /* Notice Board */
 .notice-board {
   padding: 100px 0;
@@ -1134,6 +1176,11 @@ body {
 
   .facility-item img {
     height: 180px;
+  }
+
+  .expand-btn {
+    padding: 12px 30px;
+    font-size: 0.95rem;
   }
 
   .achievements-grid {
