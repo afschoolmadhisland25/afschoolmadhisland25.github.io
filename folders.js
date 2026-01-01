@@ -31,11 +31,6 @@ const foldersData = {
     images: ["img1.jpeg", "img2.jpeg", "img3.jpeg", "img4.jpeg"],
     description: "Our achievements and accomplishments",
     name: "Achievements",
-  },  christmas_celebration: {
-    directory: "Images/Christmas Celebration/",
-    images: ["img1.jpeg", "table 2.jpg"],
-    description: "Christmas Celebration",
-    name: "Christmas Celebration",
   },
 };
 

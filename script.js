@@ -577,10 +577,9 @@ function initGalleryFolders() {
     const folderItem = document.createElement("div");
     folderItem.className = "folder-item";
     folderItem.onclick = () => {
-      window.open(
-        `gallery.html?folder=${encodeURIComponent(folderKey)}`,
-        "_blank"
-      );
+      window.location.href = `gallery.html?folder=${encodeURIComponent(
+        folderKey
+      )}`;
     };
     folderItem.innerHTML = `
       <div class="folder-icon">
