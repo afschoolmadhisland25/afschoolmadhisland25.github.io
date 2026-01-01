@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photos - Air Force School Madh Island</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <style>
+      .photos-page-header {
+        background: linear-gradient(135deg, #1e3a8a 0%, #60a5fa 100%);
+        color: white;
+        padding: 120px 0 60px;
+        text-align: center;
+        margin-top: 110px;
+      }
+
+      .photos-page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .photos-page-header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+      }
+
+      .back-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 25px;
+        background: white;
+        color: #1e3a8a;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        transition: all 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: #f8fafc;
+        transform: translateX(-5px);
+      }
+
+      .photos-page-container {
+        padding: 60px 0;
+        background: #f8fafc;
+      }
+
+      .photos-filters {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
+      }
+
+      .filter-btn {
+        padding: 10px 20px;
+        background: white;
+        border: 2px solid #e2e8f0;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .filter-btn.active,
+      .filter-btn:hover {
+        background: #1e3a8a;
+        color: white;
+        border-color: #1e3a8a;
+      }
+
+      .photos-grid {
+        column-count: 3;
+        column-gap: 30px;
+      }
+
+      .photo-item {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 30px;
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+
+      .photo-item:hover {
+        transform: scale(1.02);
+      }
+
+      .photo-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+        border-radius: 15px;
+      }
+
+      .photo-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(30, 58, 138, 0.9));
+        color: white;
+        padding: 30px 20px 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .photo-item:hover .photo-overlay {
+        transform: translateY(0);
+      }
+
+      .photo-overlay h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+
+      /* Modal for full-size image */
+      .photo-modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        cursor: pointer;
+      }
+
+      .photo-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .photo-modal-content {
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+      }
+
+      .photo-modal-content img {
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+
+      .photo-modal-close {
+        position: absolute;
+        top: -40px;
+        right: 0;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+
+      .photo-modal-close:hover {
+        color: #60a5fa;
+      }
+
+      .photo-modal-title {
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+        width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .photos-grid {
+          column-count: 2;
+        }
+
+        .photos-page-header h1 {
+          font-size: 2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .photos-grid {
+          column-count: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <img
+            src="afsschool.png"
+            width="100px"
+            height="100px"
+            alt="Air Force School School Logo"
+          />
+          <div class="nav-title">
+            <span class="school-main">Air Force School</span>
+            <span class="school-sub">Madh Island</span>
+          </div>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Photos Page Header -->
+    <div class="photos-page-header">
+      <div class="container">
+        <a href="index.html#gallery" class="back-button">
+          <i class="fas fa-arrow-left"></i>
+          Back to Gallery
+        </a>
+        <h1>Photo Gallery</h1>
+        <p>Explore our collection of memorable moments and events</p>
+      </div>
+    </div>
+
+    <!-- Photos Page Content -->
+    <section class="photos-page-container">
+      <div class="container">
+        <div class="photos-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="events">Events</button>
+          <button class="filter-btn" data-filter="sports">Sports</button>
+          <button class="filter-btn" data-filter="academic">Academic</button>
+          <button class="filter-btn" data-filter="campus">Campus</button>
+          <button class="filter-btn" data-filter="activities">
+            Activities
+          </button>
+          <button class="filter-btn" data-filter="building">Building</button>
+        </div>
+        <div class="photos-grid" id="photos-grid">
+          <!-- Photos will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Modal -->
+    <div class="photo-modal" id="photoModal">
+      <div class="photo-modal-content">
+        <span class="photo-modal-close" id="modalClose">&times;</span>
+        <img id="modalImage" src="" alt="" />
+        <div class="photo-modal-title" id="modalTitle"></div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html#home">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#gallery">Gallery</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact Information</h3>
+            <div class="contact-info">
+              <p>
+                <i class="fas fa-map-marker-alt"></i> Air Force Station, Madh
+                Island, Harbadevi, Malad West, Mumbai, Maharashtra 400061
+              </p>
+              <p>
+                <i class="fas fa-phone"></i> Tele 022-28803381 & 022-28800332
+                AFNET 3926-6856
+              </p>
+              <p>
+                <i class="fas fa-envelope"></i> afschoolmadhisland2022@gmail.com
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Air Force School Madh Island. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="folders.js"></script>
+    <script>
+      // Photos data - all gallery images
+
+      // Render photos
+      function renderPhotos(filter = "all") {
+        const photosGrid = document.getElementById("photos-grid");
+        photosGrid.innerHTML = "";
+
+        const filteredPhotos =
+          filter === "all"
+            ? photosData
+            : photosData.filter((photo) => photo.category === filter);
+
+        filteredPhotos.forEach((photo) => {
+          const photoItem = document.createElement("div");
+          photoItem.className = "photo-item";
+          photoItem.setAttribute("data-category", photo.category);
+
+          photoItem.innerHTML = `
+            <img src="${photo.src}" alt="${photo.title}" />
+            <div class="photo-overlay">
+              <h3>${photo.title}</h3>
+            </div>
+          `;
+
+          // Add click event to open modal
+          photoItem.addEventListener("click", () => {
+            openPhotoModal(photo.src, photo.title);
+          });
+
+          photosGrid.appendChild(photoItem);
+        });
+      }
+
+      // Filter functionality
+      function initFilters() {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const filter = btn.getAttribute("data-filter");
+
+            // Remove active class from all buttons
+            filterBtns.forEach((b) => b.classList.remove("active"));
+            // Add active class to clicked button
+            btn.classList.add("active");
+
+            // Render filtered photos
+            renderPhotos(filter);
+          });
+        });
+      }
+
+      // Modal functionality
+      function openPhotoModal(src, title) {
+        const modal = document.getElementById("photoModal");
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+
+        modalImage.src = src;
+        modalImage.alt = title;
+        modalTitle.textContent = title;
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closePhotoModal() {
+        const modal = document.getElementById("photoModal");
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+
+      // Initialize
+      document.addEventListener("DOMContentLoaded", function () {
+        renderPhotos();
+        initFilters();
+
+        // Close modal on close button click
+        document
+          .getElementById("modalClose")
+          .addEventListener("click", closePhotoModal);
+
+        // Close modal on background click
+        document
+          .getElementById("photoModal")
+          .addEventListener("click", function (e) {
+            if (e.target === this) {
+              closePhotoModal();
+            }
+          });
+
+        // Close modal on Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            closePhotoModal();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
