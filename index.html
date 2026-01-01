@@ -41,7 +41,7 @@
           <li><a href="#notice">Notices</a></li>
           <li><a href="#calendar">Calendar</a></li>
           <!-- <li><a href="#achievements">Achievements</a></li> -->
-          <li><a href="#contact">Contact</a></li>
+          <!-- <li><a href="#contact">Contact</a></li> -->
         </ul>
         <div class="hamburger">
           <span></span>
@@ -374,6 +374,74 @@
       </div>
     </section>
 
+    <!-- Photo Gallery -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <h2 class="section-title">Photo Gallery</h2>
+
+        <!-- Folder Structure -->
+        <div class="gallery-folders" id="gallery-folders">
+          <!-- Folders will be dynamically loaded from folders.json -->
+        </div>
+
+        <!-- Redirection to Photos Page -->
+        <div
+          style="
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #60a5fa 100%);
+            border-radius: 15px;
+            color: white;
+          "
+        >
+          <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: white">
+            Discover Life at Air Force School Madh Island
+          </h3>
+          <p style="margin-bottom: 20px; opacity: 0.9; color: white">
+            Step inside our vibrant school life—explore photos from our events,
+            activities, and daily moments. View the full photo gallery to see
+            our students, staff, and campus in action!
+          </p>
+          <a
+            href="photos.html"
+            class="download-btn"
+            style="
+              display: inline-flex;
+              align-items: center;
+              gap: 10px;
+              background: white;
+              color: #1e3a8a;
+            "
+          >
+            <i class="fas fa-images"></i>
+            View All Photos
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- School Calendar Section -->
+    <section id="calendar" class="calendar">
+      <div class="container">
+        <h2 class="section-title">School Calendar 2025-26</h2>
+        <div class="calendar-content">
+          <p>
+            View and download the academic calendar for the year 2025-26,
+            including mandatory closed holidays, optional holidays, and vacation
+            breaks.
+          </p>
+          <div class="calendar-image">
+            <img src="school calender.jpeg" alt="School Calendar 2025-26" />
+          </div>
+          <a href="school calender.jpeg" class="download-btn" download>
+            <i class="fas fa-download"></i>
+            Download School Calendar
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- Faculty Section -->
     <section id="faculty" class="faculty">
       <div class="container">
@@ -436,298 +504,6 @@
             <p class="designation">Teacher LKG</p>
             <p class="qualification"></p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Photo Gallery -->
-    <section id="gallery" class="gallery">
-      <div class="container">
-        <h2 class="section-title">Photo Gallery</h2>
-
-        <!-- Folder Structure -->
-        <div class="gallery-folders" id="gallery-folders">
-          <!-- Folders will be dynamically loaded from folders.json -->
-        </div>
-
-        <div class="gallery-filters" style="margin-top: 60px">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="events">Events</button>
-          <button class="filter-btn" data-filter="sports">Sports</button>
-          <button class="filter-btn" data-filter="academic">Academic</button>
-          <button class="filter-btn" data-filter="campus">Campus</button>
-          <button class="filter-btn" data-filter="activities">
-            Activities
-          </button>
-          <button class="filter-btn" data-filter="building">Building</button>
-        </div>
-        <div class="gallery-grid">
-          <div class="gallery-item" data-category="events">
-            <img src="gallery/Annual function.jpeg" alt="Annual function" />
-            <div class="gallery-overlay">
-              <h3>Annual function</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/Annual health checkup.jpeg"
-              alt="Annual health checkup"
-            />
-            <div class="gallery-overlay">
-              <h3>Annual health checkup</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/Baisakhi celebration.jpeg"
-              alt="Baisakhi celebration"
-            />
-            <div class="gallery-overlay">
-              <h3>Baisakhi celebration</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="academic">
-            <img
-              src="gallery/Best out of waste competition.jpeg"
-              alt="Best out of waste competition"
-            />
-            <div class="gallery-overlay">
-              <h3>Best out of waste competition</h3>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/Christmas celebration.jpeg"
-              alt="Christmas celebration"
-            />
-            <div class="gallery-overlay">
-              <h3>Christmas celebration</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="activities">
-            <img src="gallery/Circletime.jpeg" alt="Circletime" />
-            <div class="gallery-overlay">
-              <h3>Circletime</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="activities">
-            <img
-              src="gallery/Cotton pasting activity.jpeg"
-              alt="Cotton pasting activity"
-            />
-            <div class="gallery-overlay">
-              <h3>Cotton pasting activity</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/Diwali Celebration.jpeg"
-              alt="Diwali Celebration"
-            />
-            <div class="gallery-overlay">
-              <h3>Diwali Celebration</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="activities">
-            <img
-              src="gallery/Face mask making activity.jpeg"
-              alt="Face mask making activity"
-            />
-            <div class="gallery-overlay">
-              <h3>Face mask making activity</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/First day at school.jpeg"
-              alt="First day at school"
-            />
-            <div class="gallery-overlay">
-              <h3>First day at school</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/Fruits Day celebration.jpeg"
-              alt="Fruits Day celebration"
-            />
-            <div class="gallery-overlay">
-              <h3>Fruits Day celebration</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img src="gallery/Ganesh Chatruthi.jpeg" alt="Ganesh Chatruthi" />
-            <div class="gallery-overlay">
-              <h3>Ganesh Chatruthi</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/Green day celebration.jpeg"
-              alt="Green day celebration"
-            />
-            <div class="gallery-overlay">
-              <h3>Green day celebration</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="academic">
-            <img
-              src="gallery/Hybrid mode of learning.jpeg"
-              alt="Hybrid mode of learning"
-            />
-            <div class="gallery-overlay">
-              <h3>Hybrid mode of learning</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img src="gallery/Independance Day.jpeg" alt="Independance Day" />
-            <div class="gallery-overlay">
-              <h3>Independance Day</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/Janamashtami celebration.jpeg"
-              alt="Janamashtami celebration"
-            />
-            <div class="gallery-overlay">
-              <h3>Janamashtami celebration</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="campus">
-            <img src="gallery/MTS Staff.jpeg" alt="MTS Staff" />
-            <div class="gallery-overlay">
-              <h3>MTS Staff</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img
-              src="gallery/National space day.jpeg"
-              alt="National space day"
-            />
-            <div class="gallery-overlay">
-              <h3>National space day</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="campus">
-            <img
-              src="gallery/Shivangi pandey Teacher in Charge.jpeg"
-              alt="Shivangi pandey Teacher in Charge"
-            />
-            <div class="gallery-overlay">
-              <h3>Shivangi pandey Teacher in Charge</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="sports">
-            <img src="gallery/sports.jpeg" alt="sports" />
-            <div class="gallery-overlay">
-              <h3>Sports</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img src="gallery/Swachh mahotsav.jpeg" alt="Swachh mahotsav" />
-            <div class="gallery-overlay">
-              <h3>Swachh mahotsav</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="campus">
-            <img src="gallery/Teachers.jpeg" alt="Teachers" />
-            <div class="gallery-overlay">
-              <h3>Teachers</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="events">
-            <img src="gallery/Tree plantation.jpeg" alt="Tree plantation" />
-            <div class="gallery-overlay">
-              <h3>Tree plantation</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="campus">
-            <img
-              src="gallery/WhatsApp Image 2025-11-02 at 15.09.28.jpeg"
-              alt="WhatsApp Image 2025-11-02 at 15.09.28"
-            />
-            <div class="gallery-overlay">
-              <h3>From Gallery</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="building">
-            <img src="building/building 23.23.15.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="building">
-            <img src="building/building 23.23.43.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="building">
-            <img src="building/building 23.24.29.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="building">
-            <img src="building/building 23.24.53.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="building">
-            <img src="building/building 23.25.17.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="building">
-            <img src="building/building 23.25.26.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="building">
-            <img src="building/building 23.25.36.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-
-          <div class="gallery-item" data-category="building">
-            <img src="building/seated.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-          <div class="gallery-item" data-category="building">
-            <img src="building/seats.jpeg" alt="Building" />
-            <div class="gallery-overlay">
-              <h3>School Building</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- School Calendar Section -->
-    <section id="calendar" class="calendar">
-      <div class="container">
-        <h2 class="section-title">School Calendar 2025-26</h2>
-        <div class="calendar-content">
-          <p>
-            View and download the academic calendar for the year 2025-26,
-            including mandatory closed holidays, optional holidays, and vacation
-            breaks.
-          </p>
-          <div class="calendar-image">
-            <img src="school calender.jpeg" alt="School Calendar 2025-26" />
-          </div>
-          <a href="school calender.jpeg" class="download-btn" download>
-            <i class="fas fa-download"></i>
-            Download School Calendar
-          </a>
         </div>
       </div>
     </section>
