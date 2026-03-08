@@ -19,6 +19,7 @@ function renderNoticeBoard() {
       <div class="notice-content">
         <h3>${notice.title}</h3>
         <p>${notice.description}</p>
+        ${notice.link ? `<a href="${notice.link}" target="_blank" style="display:inline-block; margin-bottom:10px; color:#1e3a8a; font-weight:600; text-decoration:none;"><i class="fas fa-file-image"></i> View Notice Poster</a><br>` : ''}
         <span class="notice-tag">${notice.tag}</span>
       </div>
     `;
@@ -369,13 +370,6 @@ function initNavbarScroll() {
       navbar.style.background = "rgba(30, 58, 138, 0.98)";
     } else {
       navbar.style.background = "rgba(30, 58, 138, 0.95)";
-    }
-
-    // Hide/show navbar on scroll (optional)
-    if (scrollTop > lastScrollTop && scrollTop > 200) {
-      navbar.style.transform = "translateY(-100%)";
-    } else {
-      navbar.style.transform = "translateY(0)";
     }
 
     lastScrollTop = scrollTop;

@@ -1,0 +1,270 @@
+/* Admissions Alert Section */
+.admission-alert-section {
+  padding: 60px 0;
+  background: #f0f7ff;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.admission-alert-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.1);
+}
+
+@media (min-width: 768px) {
+  .admission-alert-content {
+    flex-direction: row;
+  }
+}
+
+.admission-image {
+  flex: 1;
+  max-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admission-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.admission-text {
+  flex: 2;
+}
+
+.admission-text h2 {
+  color: #1e3a8a;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #60a5fa;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.admission-text p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.admission-text .age-criteria {
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #1e3a8a;
+  margin: 20px 0;
+}
+
+.admission-text .age-criteria h3 {
+  color: #1e3a8a;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.admission-text .age-criteria ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.admission-text .age-criteria ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.admission-text .age-criteria ul li strong {
+  color: #60a5fa;
+  margin-right: 10px;
+  display: inline-block;
+  min-width: 80px;
+}
+
+/* Admission Modal */
+.admission-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(5px);
+  overflow-y: auto;
+}
+
+.admission-modal-content {
+  background-color: transparent;
+  margin: 5% auto;
+  padding: 0;
+  border: none;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-admission {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #1e3a8a;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.close-admission:hover,
+.close-admission:focus {
+  color: white;
+  background: #ef4444;
+  text-decoration: none;
+}
+
+/* Admission Banner */
+.admission-banner {
+  position: fixed;
+  top: 110px;
+  /* Right below the navbar */
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  color: white;
+  z-index: 990;
+  /* Navbar is 1000 */
+  min-height: 44px;
+  /* Establish a stable height */
+  padding: 8px 20px;
+  /* Adjusted padding to ensure visual balance */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.banner-text {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.banner-btn {
+  background: white;
+  color: #1e40af;
+  text-decoration: none;
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+}
+
+.banner-btn:hover {
+  background: #f0f7ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.banner-close {
+  position: absolute;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.banner-close:hover {
+  color: #fca5a5;
+}
+
+@media (max-width: 768px) {
+  .banner-text {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .admission-alert-content {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .admission-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .admission-text p,
+  .admission-text .age-criteria ul li {
+    font-size: 1rem;
+  }
+
+  .close-admission {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .admission-modal-content {
+    margin: 10% auto;
+    width: 95%;
+  }
+}

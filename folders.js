@@ -13,6 +13,47 @@ const foldersData = {
     description: "Memorable moments from our Annual Day celebrations",
     name: "Annual Day Celebrations",
   },
+  annualDayCelebrations2026: {
+    directory: "Images/Annual Day Celebrations 2026/",
+    images: [
+      "WhatsApp Image 2026-03-01 at 16.33.13 (1).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.33.13.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.33.14 (1).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.33.14 (2).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.33.14.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.33.15.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.35.30.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.35.33.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.35.34.jpeg",
+    ],
+    description: "Memorable moments from our Annual Day celebrations 2026",
+    name: "Annual Day Celebrations 2026",
+  },
+  annualSportsDay2026: {
+    directory: "Images/Annual Sports Day 2026/",
+    images: [
+      "WhatsApp Image 2026-03-01 at 16.44.10 (1).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.44.10.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.44.11.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.44.12.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.44.14.jpeg",
+    ],
+    description: "Glimpses of Annual Sports Day 2026",
+    name: "Annual Sports Day 2026",
+  },
+  christmasCelebration: {
+    directory: "Images/Christmas Celebration/",
+    images: [
+      "WhatsApp Image 2026-03-01 at 16.38.28 (1).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.38.28 (2).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.38.28.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.38.29.jpeg",
+      "img1.jpeg",
+      "table 2.jpg",
+    ],
+    description: "Joyful moments from our Christmas celebration",
+    name: "Christmas Celebration",
+  },
   independenceDayCelebrations: {
     directory: "Images/Independence Day Celebrations/",
     images: ["img1.jpeg", "img2.jpeg"],
@@ -24,6 +65,30 @@ const foldersData = {
     images: ["vid1.mp4", "vid2.mp4", "vid3.mp4", "vid4.mp4", "vid5.mp4"],
     description: "Reviews and testimonials from our parents",
     name: "Parents Reviews",
+  },
+  picnicMarveBeach: {
+    directory: "Images/Picnic Marve Beach/",
+    images: [
+      "WhatsApp Image 2026-03-01 at 16.40.16.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.40.17 (1).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.40.17 (2).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.40.17.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.40.18.jpeg",
+    ],
+    description: "Fun moments at Picnic Marve Beach",
+    name: "Picnic Marve Beach",
+  },
+  republicDayCelebrations: {
+    directory: "Images/Republic Day Celebrations/",
+    images: [
+      "WhatsApp Image 2026-03-01 at 16.42.24 (1).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.42.24 (2).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.42.24.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.42.25 (1).jpeg",
+      "WhatsApp Image 2026-03-01 at 16.42.25.jpeg",
+    ],
+    description: "Celebrating our nation's Republic Day with pride and joy",
+    name: "Republic Day Celebrations",
   },
 
   achievements: {
