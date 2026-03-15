@@ -9,25 +9,24 @@ const foldersData = {
       "img5.jpeg",
       "img6.jpeg",
       "img7.jpeg",
-    ],
-    description: "Memorable moments from our Annual Day celebrations",
-    name: "Annual Day Celebrations",
-  },
-  annualDayCelebrations2026: {
-    directory: "Images/Annual Day Celebrations 2026/",
-    images: [
-      "WhatsApp Image 2026-03-01 at 16.33.13 (1).jpeg",
       "WhatsApp Image 2026-03-01 at 16.33.13.jpeg",
       "WhatsApp Image 2026-03-01 at 16.33.14 (1).jpeg",
       "WhatsApp Image 2026-03-01 at 16.33.14 (2).jpeg",
       "WhatsApp Image 2026-03-01 at 16.33.14.jpeg",
-      "WhatsApp Image 2026-03-01 at 16.33.15.jpeg",
+      "WhatsApp Image 2026-03-01 at 16.33.15.jpeg"
+    ],
+    description: "Memorable moments from our Annual Day celebrations",
+    name: "Annual Day Celebrations",
+  },
+  childrenDayCelebrations: {
+    directory: "Images/Children Day/",
+    images: [
       "WhatsApp Image 2026-03-01 at 16.35.30.jpeg",
       "WhatsApp Image 2026-03-01 at 16.35.33.jpeg",
       "WhatsApp Image 2026-03-01 at 16.35.34.jpeg",
     ],
-    description: "Memorable moments from our Annual Day celebrations 2026",
-    name: "Annual Day Celebrations 2026",
+    description: "Memorable moments from our Children Day celebrations",
+    name: "Children's Day Celebrations",
   },
   annualSportsDay2026: {
     directory: "Images/Annual Sports Day 2026/",
@@ -47,9 +46,7 @@ const foldersData = {
       "WhatsApp Image 2026-03-01 at 16.38.28 (1).jpeg",
       "WhatsApp Image 2026-03-01 at 16.38.28 (2).jpeg",
       "WhatsApp Image 2026-03-01 at 16.38.28.jpeg",
-      "WhatsApp Image 2026-03-01 at 16.38.29.jpeg",
-      "img1.jpeg",
-      "table 2.jpg",
+      "WhatsApp Image 2026-03-01 at 16.38.29.jpeg"
     ],
     description: "Joyful moments from our Christmas celebration",
     name: "Christmas Celebration",
